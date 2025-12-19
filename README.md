@@ -1,36 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛠️ NextJS Setup — Production Level
 
-## Getting Started
+A **production-ready Next.js starter template** configured with industry-standard tools and best practices, including:
 
-First, run the development server:
+- ESLint + Prettier integration
+- lint-staged + Husky for pre-commit automation
+- Tailored for Next.js 15/16 projects
+- Best code quality and formatting workflows
+
+---
+
+## 🚀 Features
+
+A polished starter configuration for building scalable Next.js applications:
+
+✔ ESLint configured with Next.js recommended rules  
+✔ Prettier formatting with Tailwind (if used)  
+✔ lint-staged + Husky pre-commit hooks for auto-fixing on staged files  
+✔ Automatic formatting + linting on save  
+✔ Path quoting support for Windows environments  
+✔ Structured setup to encourage team collaboration
+
+---
+
+## 📁 Project Structure
+
+├── .husky/ # Git hooks for pre-commit
+├── app/ # Next.js app folder
+├── public/ # Static assets
+├── .lintstagedrc.js # lint-staged configuration
+├── .prettierignore # Files to ignore for prettier
+├── .prettierrc # Prettier configuration
+├── eslint.config.mjs # ESLint flat config
+├── jsconfig.json # Path aliases (optional)
+├── next.config.mjs # Next.js configuration
+├── package.json # Project dependencies & scripts
+└── README.md # You are here!
+
+yaml
+Copy code
+
+---
+
+## 🧩 Getting Started
+
+### 📌 Prerequisites
+
+Make sure you have:
+
+- **Node.js v16+** installed
+- Package manager: `npm`, `pnpm`, or `yarn`
+
+---
+
+### 🛠️ Installation
+
+Clone the repository:
 
 ```bash
+git clone https://github.com/SidharthSinghShrinet/NextJS_Setup_Production_Level.git
+cd NextJS_Setup_Production_Level
+Install dependencies:
+
+bash
+Copy code
+npm install
+# or
+yarn install
+# or
+pnpm install
+🚀 Development
+Run the local development server:
+
+bash
+Copy code
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
-```
+Open in browser:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+arduino
+Copy code
+http://localhost:3000
+🧹 Linting & Formatting
+🔍 Lint (check code quality)
+bash
+Copy code
+npm run lint
+🛠 Auto-fix lint issues
+bash
+Copy code
+npm run lint:fix
+📐 Format files
+bash
+Copy code
+npm run format
+📑 Pre-commit (lint-staged)
+Staged files are automatically linted and formatted on git commit via Husky:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+bash
+Copy code
+git add .
+git commit -m "feat: your message"
+This ensures:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ESLint runs with --fix
 
-## Learn More
+Prettier formats staged files
 
-To learn more about Next.js, take a look at the following resources:
+Only valid code is committed
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🧠 How It Works
+ESLint
+Configured using a flat config with Next.js and Prettier integration. Rules enforce:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No unused vars
 
-## Deploy on Vercel
+Hook rules
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Best practices
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ESLint auto-fixes what it can and reports the rest.
+
+Prettier
+Handles formatting tidily. With prettier-plugin-tailwindcss (if Tailwind is used), classes are automatically sorted. Formatting is safe and consistent across the codebase.
+
+lint-staged + Husky
+Ensures quality gates before commits:
+
+lint-staged only runs on staged files
+
+ESLint + Prettier run together without conflicts
+
+Integration is safe on Windows (paths are correctly quoted)
+
+📦 Scripts
+Script	Description
+dev	Start development server
+build	Build production version
+start	Start production server
+lint	Run ESLint
+lint:fix	Fix lint issues
+format	Run Prettier formatting
+lint:staged	Run pre-commit tasks manually
+
+📌 Production and Optimizations
+Before deploying:
+
+Run npm run build
+
+Ensure no lint errors remain (very useful in CI pipelines)
+
+Use performance profiling tools
+
+Keep dependencies up to date
+
+Learn more in the official Next.js Production Checklist:
+👉 https://nextjs.org/docs/app/guides/production-checklist 
+Next.js
+
+📚 Next.js Resources
+Documentation: https://nextjs.org/docs
+
+App Router Guides: Routing, layouts, caching, data fetching 
+Next.js
+
+💡 Contributing
+Contributions are welcome! Please:
+
+Fork the repository
+
+Create a new branch
+
+Make your changes
+
+Submit a pull request
+
+Follow coding conventions and keep commits clean.
+
+📝 License
+This project is open source — feel free to use
