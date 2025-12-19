@@ -1,9 +1,8 @@
 "use client";
 
 function Page() {
-  const a = 5;
-
-  console.log(a);
+  const b = 5;
+  console.log(b);
   return (
     <div>
       <h1 className="bg-green-500 font-serif text-2xl font-bold underline">
